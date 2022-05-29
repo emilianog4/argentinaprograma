@@ -25,7 +25,7 @@ public class Usuario implements Serializable{
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")
     private List<Educacion> educacionList;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idSkills")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idSkill")
     private List<Skills> skillsList;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idExp")
     private List<Experiencia> experienciaList;
@@ -40,6 +40,10 @@ public class Usuario implements Serializable{
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.fotoPerfil = fotoPerfil;
+    }
+
+    public Usuario(String nombre, String nombreUsuario, String email, String encode) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public Long getId() {
@@ -88,9 +92,6 @@ public class Usuario implements Serializable{
 
     public void setFotoPerfil(String fotoPerfil) {
         this.fotoPerfil = fotoPerfil;
-    }
-    
-    
-    
+    }   
     
 }

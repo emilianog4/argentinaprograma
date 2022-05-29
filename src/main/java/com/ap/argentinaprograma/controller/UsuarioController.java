@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/usuario")
+
 public class UsuarioController {
     private final UsuarioService usuarioService;
 
@@ -25,6 +26,7 @@ public class UsuarioController {
         Usuario usuario=usuarioService.buscarUsuarioPorId(id);
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
+    
     @PutMapping("/update")
     public ResponseEntity<Usuario> editarUsuario(@RequestBody Usuario usuario){
         Usuario updateUsuario=usuarioService.editarUsuario(usuario);
