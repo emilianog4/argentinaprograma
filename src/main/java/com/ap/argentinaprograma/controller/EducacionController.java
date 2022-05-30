@@ -25,7 +25,7 @@ public class EducacionController {
     public EducacionController(EducacionService educacionService) {
         this.educacionService = educacionService;
     }
-    
+   
     @GetMapping("/all")
     public ResponseEntity<List<Educacion>> obtenerEducacion(){
         List<Educacion> educacion= educacionService.buscarEducacion();

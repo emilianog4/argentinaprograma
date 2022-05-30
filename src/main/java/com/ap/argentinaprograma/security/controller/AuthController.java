@@ -48,7 +48,7 @@ public class AuthController {
 
     @Autowired
     JwtProvider jwtProvider;
-
+    
     @PostMapping("/nuevo")
     public ResponseEntity<?> nuevo(@Valid @RequestBody NewUser newUser, BindingResult bindingResult){
         if(bindingResult.hasErrors())
@@ -68,7 +68,7 @@ public class AuthController {
         userService.save(user);
         return new ResponseEntity(new Mensaje("usuario guardado"), HttpStatus.CREATED);
     }
-
+   
     @PostMapping("/login")
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUser loginUser, BindingResult bindingResult){
         if(bindingResult.hasErrors())
