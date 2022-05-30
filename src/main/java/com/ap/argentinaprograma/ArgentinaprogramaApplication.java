@@ -18,17 +18,18 @@ public class ArgentinaprogramaApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ArgentinaprogramaApplication.class, args);
-    }}
-//
-//    @Bean
-//    public WebMvcConfigurer corsConfigurer() {
-//        return new WebMvcConfigurer() {
-//            @Override
-//            public void addCorsMappings(CorsRegistry registry) {
-//                registry.addMapping("/**").allowedOrigins("https://portfoliofront-e2bb3.web.app");
-//            }
-//        };
-//    }
+    }
+
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**").allowedOrigins("https://portfoliofront-e2bb3.web.app");
+            }
+        };
+    }
+}
 //
 //    @Bean
 //    public CorsFilter corsFilter() {
