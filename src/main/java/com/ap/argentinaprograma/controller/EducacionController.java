@@ -26,28 +26,28 @@ public class EducacionController {
         this.educacionService = educacionService;
     }
    
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<List<Educacion>> obtenerEducacion(){
         List<Educacion> educacion= educacionService.buscarEducacion();
         return new ResponseEntity<>(educacion, HttpStatus.OK);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/update")
+    @PutMapping
     public ResponseEntity<Educacion> editarEducacion(@RequestBody Educacion educacion){
         Educacion updateEducacion=educacionService.editarEducacion(educacion);
         return new ResponseEntity<>(updateEducacion, HttpStatus.OK);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/add")
+    @PostMapping
     public ResponseEntity<Educacion> agregarEducacion(@RequestBody Educacion educacion){
         Educacion nuevaEducacion=educacionService.agregarEducacion(educacion);
         return new ResponseEntity<>(nuevaEducacion,HttpStatus.CREATED);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> borrarEducacion(@PathVariable("id") Long id){
         educacionService.borrarEducacion(id);
         return new ResponseEntity<>(HttpStatus.OK);
