@@ -22,7 +22,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +30,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins = "https://portfoliofront-e2bb3.web.app")
 @RequestMapping("/auth")
 
 public class AuthController {
